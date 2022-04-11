@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">0</h1>
+    <button onclick="incre()">increament</button>
+    <button onclick="decre()">decreament</button>
+    
+</body>
+
+<script>
+    var count;
+if(localStorage.getItem("counter")==null){
+    count=0;
+}else {
+    count=localStorage.getItem("counter")
+}
+document.querySelector("h1").innerText=count
+
+
+
+function incre(){
+    count++;
+    localStorage.setItem("counter",count)
+    document.getElementById("heading").innerText=count
+
+}
+
+function decre(){
+    count--
+    localStorage.setItem("counter",count)
+
+    document.getElementById("heading").innerText=count
+}
+
+
+</script>
+</html>
+
