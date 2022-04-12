@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        grid-gap:30%;
+    }
+    button{
+        margin: auto;
+    }
+    p{
+        text-align: center;
+        
+        
+    }
+    div{
+        margin:auto;
+    }
+</style>
+<body>
+    <div> <input id= "a" type="number" placeholder="a" />
+        <input id="b" type="number" placeholder="b" />    
+    </div>
+    <button onclick="myFunction()" >Click here</button>
+    <p id="ans">empty</p>
+    
+</body>
+</html>
+
+<script>
+
+   function myFunction(){
+       var b=document.getElementById("b").value
+    var a= document.getElementById("a").value;
+//  var ans= document.getElementById("ans")
+       document.querySelector("p").textContent=a*b
+       
+   }
+</script>

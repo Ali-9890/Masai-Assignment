@@ -4,6 +4,13 @@
 
 
 document.querySelector("#submit").addEventListener("click",contact)
+document.querySelector("#submit").addEventListener("click",contactAdd)
+var contactData=[];
+if(localStorage.getItem("contactList")===null){
+    contactData=[]
+}else {
+     contactData= JSON.parse(localStorage.getItem("contactList"))
+}
 function contact(){
     event.preventDefault();
     var details ={
@@ -12,18 +19,29 @@ function contact(){
         select:document.querySelector("#select").value
 
     }
-    localStorage.setItem("contactList",JSON.stringify(details))
+    contactData.push(details)
+    localStorage.setItem("contactList",JSON.stringify(contactData))
     alert("Added contact to your contact list")
-    
+}
 
 
+function contactAdd(){
+    var contactAll= JSON.parse(localStorage.getItem("contactList"))
+   var tr= document.createElement("tr")
+   var td1=document.createElement("td")
+   var td2=document.createElement("td")
+   var td3=document.createElement("td")
+  
+   contactAll.forEach(function(ele){
+       td1.innerText=ele.name;
+       td2.innerText=ele.mobile;
+       td3.innerText=ele.select
+   })
 
-document.querySelector("h1").innerText=fix
+   var tbody=document.querySelector("tbody")
+   tr.append(td1,td2,td3);
+   tbody.append(tr)
 
+   
 
 }
-var fix = localStorage.getItem("contactList")
-JSON.parse(fix)
-console.log(fix)
-
-    

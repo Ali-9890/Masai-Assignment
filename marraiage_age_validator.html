@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    form{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #text > div{
+        border: 1px solid black;
+        width: 130px;
+        height: 30px;
+        margin:auto;
+        background-color: white;
+        font-weight: bold;
+        text-align: center;
+        font-family: arial; 
+    padding-top:10px;   }
+    #text > input{
+        margin: auto;
+        width: 60px;
+        margin-top: 20px;
+    }
+    #text{
+        padding-top:50px;
+        display: flex;
+        flex-direction: column;
+    }
+ 
+</style>
+<body>
+
+    <form>
+        <div>
+            <label>Gender</label>
+            <select id="gender">
+                <option>--</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+       
+        <div>
+            <label>Age</label>
+            <input id="age" type="number"/>
+        </div>
+    </form>
+    <div id="text">
+        <div id="result"></div>
+    <input onclick="submit()" type="submit"/>
+    </div>
+    
+    
+</body>
+</html>
+
+<script>
+   
+    function submit(){
+        var gender = document.getElementById("gender").value;
+    var age = document.getElementById("age").value;
+    var result= document.getElementById("result")
+      if(gender=="Male" && age>="22"){
+          result.textContent="Valid"
+      }else if(gender=="Female" && age>="18"){
+          result.textContent="Valid"
+      }
+      else {
+          result.textContent="Invalid"
+      }
+    }
+</script>
