@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   #navbar img{
+    width: 10%;
+    }
+    #navbar{
+        display: flex;
+        background-color:rgb(41,116,241);
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #navbar > div{
+        padding: 1% 2%;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        font-weight: 600;
+    }
+#women{
+    background-color:rgba(62, 106, 189, 0.959);
+}
+</style>
+<style>
+    body{
+        background-color: white;
+      
+    }
+    #container{
+        font-family: Arial, Helvetica, sans-serif;
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr);
+        grid-gap:20px;
+        padding:30px 150px
+    }
+    #container > div{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        
+    }
+    img{
+        width: 100%;
+        height: 60%;
+    }
+    p,h5,h4{
+        padding-left: 2%;
+    }
+ #gocart{
+     color:black;
+ }
+ #gocart a{
+     color:black
+ }
+    button{
+        background-color: rgba(248, 248, 3, 0.733);
+        font-weight: 600;
+        border-radius: 5px;
+      margin-left: 3%;
+      
+    }
+</style>
+<body>
+    <div id="navbar">
+        <div><img src="https://imgs.search.brave.com/BujOrQV5GMDu2qh6aaMyVhpGgecB05ClpIH_YNldkFI/rs:fit:1313:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5P/WlVfQlc3U0I3RmNO/elN0QXNzd2hnSGFD/ciZwaWQ9QXBp"/></div>
+        <div><a href="home.html">Home</a></div>
+        <div><a href="men.html">Men</a></div>
+        <div id="women"><a href="women.html">Women</a></div>
+
+        <div><a href="signup.html">Signup</a></div>
+        <div><a href="login.html">Login</a></div>
+    </div>
+
+    <button id="gocart"  ><a href="cart.html">Go To Cart</a></button>
+     
+    <div id="container">
+    </div>
+
+
+    
+</body>
+</html>
+<script>
+      var mensData =[
+        {
+            img:"https://rukminim2.flixcart.com/image/495/594/jtn9bww0/top/w/2/7/s-mcaw18tp11-96-192-miss-chase-original-imafev9yxa9mas6f.jpeg?q=50",
+            name:"Casual Regular Sleeves",
+            price:849,
+            size:"S, M, L"
+        },
+        {
+            img:"https://rukminim2.flixcart.com/image/495/594/kjhgzgw0-0/t-shirt/o/e/r/s-12193486-roadster-original-imafzfb9r7ndzhnz.jpeg?q=50",
+            name:"Printed women round top",
+            price:560,
+            size: "L, XL, XXL"
+        },
+        {
+            img:"https://www.flipkart.com/funday-fashion-women-solid-casual-black-shirt/p/itmfcx9qtdtvtx5q?pid=SHTFCXYZAVNGV3FF&lid=LSTSHTFCXYZAVNGV3FFEGWDNR&marketplace=FLIPKART&store=clo%2Fash&srno=b_1_3&otracker=browse&fm=neo%2Fmerchandising&iid=b875943e-5946-43c4-83e1-231acc0f75d1.SHTFCXYZAVNGV3FF.SEARCH&ppt=browse&ppn=browse&ssid=g21dt0f6mo0000001649819348899",
+            name:"Women Regular Fit spread top",
+            price:475,
+            size: "M, XXXL"
+        },
+        {
+            img:"https://rukminim2.flixcart.com/image/495/594/l071d3k0/t-shirt/1/d/2/s-3813-the-dry-state-original-imagcfh833gdjeem.jpeg?q=50",
+            name:"Graphic Print women round neck Top",
+            price:377,
+            size:"S, M, L, XL, 3XL"
+        },
+        {
+            img:"https://rukminim2.flixcart.com/image/484/581/kflftzk0/top/u/5/r/xl-isca-206maroon-istyle-can-original-imafwyzgqarrvvym.jpeg?q=50",
+            name:"Casual Flared Sleeves printed women top",
+            price:799,
+            size: "M, XXXL"
+        },
+        {
+            img:"https://rukminim2.flixcart.com/image/495/594/jr83gy80/shirt/g/6/g/xl-sysckdshtrw01-funday-fashion-original-imafd2fczy4byjgt.jpeg?q=50",
+            name:"Women fit regular checker top-shirt",
+            price:677,
+            size:"S, M, L, XL, 3XL"
+        },
+        {
+            img:"https://rukminim2.flixcart.com/image/495/594/jtn9bww0/top/w/2/7/s-mcaw18tp11-96-192-miss-chase-original-imafev9yxa9mas6f.jpeg?q=50",
+            name:"Casual Regular Sleeves",
+            price:849,
+            size:"S, M, L"
+        },
+        {
+            img:"https://rukminim2.flixcart.com/image/495/594/kjhgzgw0-0/t-shirt/o/e/r/s-12193486-roadster-original-imafzfb9r7ndzhnz.jpeg?q=50",
+            name:"Printed women round top",
+            price:560,
+            size: "L, XL, XXL"
+        },
+        {
+            img:"https://www.flipkart.com/funday-fashion-women-solid-casual-black-shirt/p/itmfcx9qtdtvtx5q?pid=SHTFCXYZAVNGV3FF&lid=LSTSHTFCXYZAVNGV3FFEGWDNR&marketplace=FLIPKART&store=clo%2Fash&srno=b_1_3&otracker=browse&fm=neo%2Fmerchandising&iid=b875943e-5946-43c4-83e1-231acc0f75d1.SHTFCXYZAVNGV3FF.SEARCH&ppt=browse&ppn=browse&ssid=g21dt0f6mo0000001649819348899",
+            name:"Women Regular Fit spread top",
+            price:475,
+            size: "M, XXXL"
+        },
+        {
+            img:"https://rukminim2.flixcart.com/image/495/594/l071d3k0/t-shirt/1/d/2/s-3813-the-dry-state-original-imagcfh833gdjeem.jpeg?q=50",
+            name:"Graphic Print women round neck Top",
+            price:377,
+            size:"S, M, L, XL, 3XL"
+        },
+        {
+            img:"https://rukminim2.flixcart.com/image/484/581/kflftzk0/top/u/5/r/xl-isca-206maroon-istyle-can-original-imafwyzgqarrvvym.jpeg?q=50",
+            name:"Casual Flared Sleeves printed women top",
+            price:799,
+            size: "M, XXXL"
+        },
+        {
+            img:"https://rukminim2.flixcart.com/image/495/594/jr83gy80/shirt/g/6/g/xl-sysckdshtrw01-funday-fashion-original-imafd2fczy4byjgt.jpeg?q=50",
+            name:"Women fit regular checker top-shirt",
+            price:677,
+            size:"S, M, L, XL, 3XL"
+        }
+    ]
+         
+    var cartData;
+    if(localStorage.getItem("cartData")===null){
+        cartData=[]
+    }else {
+        cartData=JSON.parse(localStorage.getItem("cartData"))
+    }
+    mensData.map(function(ele){
+        var box = document.createElement("div");
+
+        var img=document.createElement("img");
+        img.src=ele.img;
+
+        var name = document.createElement("p");
+        name.textContent= ele.name;
+
+        var price =document.createElement("h4");
+        price.innerText=ele.price;
+
+        var size =document.createElement("h5");
+        size.textContent="SIZE"+" "+ele.size;
+
+        var butn= document.createElement("button")
+        butn.textContent="Add to Cart";
+        butn.addEventListener("click", function cart(){
+            cartData.push(ele)
+            localStorage.setItem("cartData",JSON.stringify(cartData))
+        })
+        
+
+        box.append(img,name,price,size,butn);
+        document.querySelector("#container").append(box)
+    })
+</script>

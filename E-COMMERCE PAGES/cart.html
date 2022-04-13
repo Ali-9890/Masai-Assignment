@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #mainbox{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 2% 5%;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    }
+    #box1{
+
+        width: 20%;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    }
+    #box2{
+        flex-grow: 3;
+       padding-left: 5%;
+    }
+    img{
+        width: 100%
+    }
+</style>
+<body>
+
+<p></p>
+    
+</body>
+</html>
+
+
+<script>
+
+  
+
+    var cartData=JSON.parse(localStorage.getItem("cartData"))
+
+    var totalsum= cartData.reduce(function(sum,elem, index, arr){
+      return  sum+=Number(elem.price);
+
+    },0)
+
+    document.querySelector("p").innerText="You have"+" "+cartData.length+" "+"items and total price is"+ " "+ totalsum
+     
+    cartData.forEach((element,Index) => {
+        var mainbox =document.createElement("div");
+        mainbox.setAttribute("id","mainbox")
+        var box1 =document.createElement("div");
+        box1.setAttribute("id","box1")
+
+        var box2 =document.createElement("div");
+        box2.setAttribute("id","box2")
+
+        var img=document.createElement("img");
+        img.src=element.img;
+         
+        var name = document.createElement("p")
+        name.innerText=element.name;
+
+        var price= document.createElement("h4");
+        price.innerText=element.price;
+
+        var size = document.createElement("h5");
+        size.innerText=element.size;
+
+        var button=document.createElement("button");
+        button.textContent="Remove From Cart"
+
+        button.addEventListener("click", function remove(){
+            cartData.splice(Index, 1);
+            localStorage.setItem("cartData",JSON.stringify(cartData))
+            window.location.reload()
+        })
+         box1.append(img)
+         box2.append(name,price,size,button);
+         mainbox.append(box1,box2);
+         document.querySelector("body").append(mainbox)
+
+
+    });
+</script>
