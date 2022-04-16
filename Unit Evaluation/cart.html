@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #smain{
+        display: flex;
+        flex-direction: column;
+        padding:5% 10%;
+        
+    }
+    #smain >div{
+        margin: 5%;
+    }
+    #mainbox{
+        display: flex;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    #box1{
+        width:30%;
+       
+    }
+    img{
+        width:50%;
+       
+    }
+    #checkout{
+      padding: 12px 16px;
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+    }
+</style>
+<body>
+    <h3></h3>
+    <div>
+        <input id="coupen" type="text" placeholder="Enter the Promo code here"/>
+        <button  id="submit">Apply</button>
+    </div>
+    <div id="smain">
+
+    </div>
+
+    <button id="checkout"><a href="payment.html">Checkout</a></button>
+    
+</body>
+</html>
+<script>
+    var cartData=JSON.parse(localStorage.getItem("cartData"))
+
+    var totalsum=cartData.reduce(function(sum,elem,index,arr){
+        return sum+=Number(elem.price);
+    },0)
+    var total=0
+
+document.querySelector("#submit").addEventListener("click" ,promo)
+function promo(){
+if(document.querySelector("#coupen").value=="masai30"){
+var totalsum= 0.3*totalsum
+}else{
+   var  totalsum=totalsum
+}
+}
+
+
+document.querySelector("h3").innerText="You have"+" "+cartData.length+" "+" items in cart and Total Price is ₹"+" "+totalsum;
+
+    cartData.forEach((element,Index)=>{
+        var mainbox =document.createElement("div");
+        mainbox.setAttribute("id","mainbox")
+
+        var box1=document.createElement("div");
+        box1.setAttribute("id","box1")
+
+        var box2=document.createElement("div");
+        box2.setAttribute("id","box2")
+
+        var img=document.createElement("img");
+        img.src=element.image_url;
+
+        var name= document.createElement("p");
+        name.innerText=element.name;
+        
+        var rating=document.createElement("h4");
+        rating.innerText="rating:"+" "+element.rating;
+
+        var price =document.createElement("h5");
+        price.innerText="Price ₹"+" "+element.price
+
+        var button=document.createElement("button");
+        button.textContent="Remove from Cart"
+
+        button.addEventListener("click",function remove(){
+            cartData.splice(Index,1);
+            localStorage.setItem("cartData",JSON.stringify(cartData))
+            window.location.reload()
+        })
+
+        box1.append(img)
+    box2.append(name,rating,price,button)
+    mainbox.append(box1,box2)
+    document.querySelector("#smain").append(mainbox)
+    });
+
+</script>
