@@ -34,6 +34,20 @@
     #totalcartitems{
         text-align: end;
     }
+
+    #payment{
+        position: fixed;
+        bottom: 3vh;
+        right: 2vh;
+        padding: 2vh 1vh;
+        background-color: green;
+        border-radius: 1vh;
+    }
+    #payment a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
 </style>
 <body>
 
@@ -41,7 +55,7 @@
 <input id="promo" type="text" placeholder="Enter code here" />
 <button id="promobutn" onclick="promocode()">Apply</button>
 
-    
+    <button id="payment"><a href="./payment.html">Proceed to Pyment</a></button>
 </body>
 </html>
 

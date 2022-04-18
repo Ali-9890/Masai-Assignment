@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #paymaint{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width:30vh;
+        margin: auto;
+        border: 2px solid black;
+        padding:4vh;
+    }
+    #pnumber,#pname,#pmonths,#pyears,#pcvv{
+        width: 100%;
+        padding: 1.5vh 0vh;
+        margin: 1vh 0vh;
+    }
+    #Paydetails{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    #pmonths,#pyears,#pcvv{
+        width:30%
+    }
+    #psubmit{
+       margin: auto;
+       background-color: orange;
+       margin-top: 3vh;
+       padding: 2vh;
+       color: white;
+       border-radius: 1vh;
+       border: none;
+    }
+</style>
+<body>
+    <div id="paymaint">
+        <input id="pnumber" type="number" placeholder="Enter Card number" />
+        <input id="pname" type ="text" placeholder="Enter name here" />
+        <div id="Paydetails">
+            <select id="pmonths">
+                <option>MM</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+                <option>06</option>
+                <option>07</option>
+                <option>08</option>
+                <option>09</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>
+            <select id="pyears">
+                <option>YYYY</option>
+                <option>2022</option>
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+                <option>2026</option>
+                <option>2027</option>
+                <option>2028</option>
+                <option>2029</option>
+                <option>2030</option>
+                <option>2031</option>
+                <option>2032</option>
+                <option>2033</option>
+                <option>2034</option>
+                <option>2035</option>
+                <option>2036</option>
+                <option>2037</option>
+                <option>2038</option>
+                <option>2039</option>
+                <option>2040</option>
+                <option>2041</option>
+                <option>2042</option>
+            </select>
+            <input id="pcvv" type="password" placeholder="CVV" /> 
+          </div>
+          <input id="psubmit" type="submit" placeholder="submit" onclick="formon()" />
+
+        </div>
+</body>
+</html>
+
+<script>
+
+var number=document.querySelector("#pnumber").value
+var name=document.querySelector("#pmonths").value
+var month=document.querySelector("#pyearsr").value
+var year=document.querySelector("#pnumber").value
+var cvv=document.querySelector("#pcvv").value
+
+
+
+
+    function formon(){
+        event.preventDefault()
+        var number=document.querySelector("#pnumber").value
+        var name=document.querySelector("#pname").value
+var month=document.querySelector("#pmonths").value
+var year=document.querySelector("#pyears").value
+var cvv=document.querySelector("#pcvv").value
+
+        if(number=="123456789" || month=="04" || year=="2026" || cvv=="123"){
+            alert("Payment Successfully")
+        }else {
+            alert("Please Fill the currect details")
+        }
+ 
+    }
+</script>
