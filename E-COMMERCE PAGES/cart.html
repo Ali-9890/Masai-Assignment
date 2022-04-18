@@ -7,16 +7,20 @@
     <title>Document</title>
 </head>
 <style>
+    body{
+        padding:2vh 10vh;
+    }
     #mainbox{
         display: flex;
         justify-content: space-between;
         width: 100%;
-        margin: 2% 5%;
+        height: 30vh;
+        margin: 2% 0%;
         box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
     }
     #box1{
 
-        width: 20%;
+        width: 15%;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
     }
     #box2{
@@ -24,12 +28,19 @@
        padding-left: 5%;
     }
     img{
-        width: 100%
+        width: 100%;
+        height: 30vh;
+    }
+    #totalcartitems{
+        text-align: end;
     }
 </style>
 <body>
 
-<p></p>
+<h3 id="totalcartitems"></h3>
+<input id="promo" type="text" placeholder="Enter code here" />
+<button id="promobutn" onclick="promocode()">Apply</button>
+
     
 </body>
 </html>
@@ -43,10 +54,23 @@
 
     var totalsum= cartData.reduce(function(sum,elem, index, arr){
       return  sum+=Number(elem.price);
-
+                                        
     },0)
+    document.querySelector("#totalcartitems").innerText="You have"+" "+cartData.length+" "+"items and total price is"+ " "+"₹"+" "+ totalsum
 
-    document.querySelector("p").innerText="You have"+" "+cartData.length+" "+"items and total price is"+ " "+ totalsum
+    function promocode(){
+        if(document.querySelector("#promo").value==="masai30"){
+            document.querySelector("#totalcartitems").innerText="You have"+" "+cartData.length+" "+"items and total price is"+ " "+"₹"+" "+ Math.floor(totalsum*0.7)
+
+        }else {
+            document.querySelector("#totalcartitems").innerText="You have"+" "+cartData.length+" "+"items and total price is"+ " "+"₹"+" "+ totalsum
+
+        }
+        console.log()
+        
+    }
+    
+   
      
     cartData.forEach((element,Index) => {
         var mainbox =document.createElement("div");
@@ -64,7 +88,7 @@
         name.innerText=element.name;
 
         var price= document.createElement("h4");
-        price.innerText=element.price;
+        price.innerText="₹"+" " +element.price;
 
         var size = document.createElement("h5");
         size.innerText=element.size;
